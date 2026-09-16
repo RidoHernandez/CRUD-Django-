@@ -1,0 +1,5 @@
+Usuario: admin
+Correo: admin@biblioteca.local
+Contraseña de desarrollo: BibliotecaAdmin2026!
+is_staff=1, is_superuser=1, is_active=1
+Usuario verificado directamente en MySQL.
