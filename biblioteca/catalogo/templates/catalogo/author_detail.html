@@ -1,0 +1,27 @@
+{% extends "catalogo/pagina_maestra.html" %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h2 class="card-title">{{ author.first_name }} {{ author.last_name }}</h2>
+    <p><strong>Seudónimo:</strong> {{ author.pen_name|default:"—" }}</p>
+    <p><strong>Nacionalidad:</strong> {{ author.nationality }}</p>
+    <p><strong>Fecha de nacimiento:</strong> {{ author.date_of_birth|default:"—" }}</p>
+    <p><strong>Fecha de fallecimiento:</strong> {{ author.date_of_death|default:"—" }}</p>
+
+    <hr>
+    <h5>Libros de este autor</h5>
+    <ul class="list-group list-group-flush">
+      {% for book in author.book_set.all %}
+        <li class="list-group-item">
+          <a href="{% url 'book-detail' book.pk %}">{{ book.title }}</a>
+        </li>
+      {% empty %}
+        <li class="list-group-item">Este autor no tiene libros registrados.</li>
+      {% endfor %}
+    </ul>
+
+    <a class="btn btn-secondary mt-3" href="{% url 'authors' %}">Volver a la lista</a>
+  </div>
+</div>
+{% endblock %}

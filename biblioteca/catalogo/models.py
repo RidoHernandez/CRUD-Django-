@@ -36,8 +36,10 @@ class Genre(models.Model):
 class Author(models.Model):
 	"""Model representing an author."""
 
-	first_name = models.CharField(max_length=100)
-	last_name = models.CharField(max_length=100)
+	first_name = models.CharField(max_length=40)
+	last_name = models.CharField(max_length=40)
+	pen_name = models.CharField(max_length=60, null=True, blank=True)
+	nationality = models.CharField(max_length=40)
 	date_of_birth = models.DateField(null=True, blank=True)
 	date_of_death = models.DateField('died', null=True, blank=True)
 

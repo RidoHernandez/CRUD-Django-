@@ -1,0 +1,15 @@
+{% extends "catalogo/pagina_maestra.html" %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h1 class="card-title">{{ book.title }}</h1>
+    <p><strong>Autor:</strong> {{ book.author|default:"—" }}</p>
+    <p><strong>Resumen:</strong> {{ book.summary }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+    <p><strong>Géneros:</strong> {{ book.display_genre|default:"—" }}</p>
+    <p><strong>Idioma:</strong> {{ book.get_language_display|default:"—" }}</p>
+    <a class="btn btn-secondary" href="{% url 'books' %}">Volver a la lista</a>
+  </div>
+</div>
+{% endblock %}

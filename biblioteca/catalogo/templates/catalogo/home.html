@@ -1,0 +1,25 @@
+{% extends "catalogo/pagina_maestra.html" %}
+
+{% block content %}
+<h1 class="mb-4">Biblioteca</h1>
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title h5">Libros</h2>
+        <p class="display-6">{{ num_books }}</p>
+        <a class="btn btn-primary" href="{% url 'books' %}">Ver libros</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title h5">Autores</h2>
+        <p class="display-6">{{ num_authors }}</p>
+        <a class="btn btn-primary" href="{% url 'authors' %}">Ver autores</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
